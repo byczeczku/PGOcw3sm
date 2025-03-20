@@ -6,6 +6,15 @@ public class Klient
     private String email;
     private boolean czyStaly;
 
+//metoda
+    public void wyswietlInformacje() {
+        System.out.println("Klient o id: " + id
+                + " imie: " + imie
+                + " nazwisko: " + nazwisko
+                + " email: " + email
+                + " czyStaly: " + czyStaly);
+    }
+//koniecMetody
 
     public int getId() {
         return id;

@@ -6,6 +6,16 @@ public class Produkt
     private double cena;
     private int iloscWMagazynie;
 
+//metoda
+    public void wyswietlInformacje()
+    {
+        System.out.println("Ksiazka o id: " + id
+                + " nazwa: " + nazwa
+                + " kategoria: " + kategoria
+                + " cena: " + cena
+                + " iloscWMagazynie: " + iloscWMagazynie);
+    }
+//koniecMetody
 
     public int getId() {
         return id;
