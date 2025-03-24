@@ -11,7 +11,8 @@ public class Zamowienie
     public double obliczWartoscZamowienia()
         {
             double suma = 0;
-            for (int i = 0; i < Produkty.length; i++){
+            for (int i = 0; i < Produkty.length; i++)
+            {
                 suma += Produkty[i].getCena() * ilosci[i];
             }
             return suma;
@@ -19,14 +20,37 @@ public class Zamowienie
 //koniecMetody1
 
 //metoda2
-    public double zastosujZnizke()
+    public void zastosujZnizke()
     {
-        if (klient.isCzyStaly()){
-
+        if (klient.isCzyStaly())
+        {
+            double sumaPoZnizce = 0;
+            for (int i = 0; i < Produkty.length; i++)
+            {
+                double cenaPoZnizce = Produkty[i].getCena() * 0.9;
+                sumaPoZnizce += cenaPoZnizce * ilosci[i];
+            }
+            System.out.println("Zniżka 10% została zastosowana. Nowa wartość zamówienia: " + sumaPoZnizce + " PLN");
+        } else {
+            System.out.println("Brak zniżki – klient nie jest stałym klientem.");
         }
-
     }
 //koniecMetody2
+
+// metoda3
+    public void wyswietlSzczegoly()
+    {
+        System.out.println("Zamówienie ID: " + id);
+        System.out.println("Klient: " + klient.getImie() + " " + klient.getNazwisko());
+        System.out.println("Data zamówienia: " + dataZamowienia);
+        System.out.println("Status: " + status);
+        System.out.println("Produkty:");
+        for (int i = 0; i < Produkty.length; i++) {
+            System.out.println("- " + Produkty[i].getNazwa() + " (x" + ilosci[i] + ") - " + Produkty[i].getCena() + " PLN");
+        }
+        System.out.println("Łączna wartość zamówienia: " + obliczWartoscZamowienia() + " PLN");
+    }
+//koniecMetody3
 
     public String getId() {
         return id;
