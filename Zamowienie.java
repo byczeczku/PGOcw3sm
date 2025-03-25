@@ -1,12 +1,20 @@
 public class Zamowienie
 {
-    private String id;
+    //private String id;
+    private int id;
     private Klient klient;
     private Produkt[] Produkty;
     private int[] ilosci;
     private String dataZamowienia;
     private String status;
 
+    public Zamowienie( int id, Klient klient, Produkt[] produkty, int[] ilosci)
+    {
+        this.id= id;
+        this.klient= klient;
+        this.Produkty= produkty;
+        this.ilosci= ilosci;
+    }
 //metoda1
     public double obliczWartoscZamowienia()
         {
@@ -52,10 +60,10 @@ public class Zamowienie
     }
 //koniecMetody3
 
-    public String getId() {
+    public int getId() {
         return id;
     }
-    public void setId(String id) {
+    public void setId( int id) {
         this.id = id;
     }
 
